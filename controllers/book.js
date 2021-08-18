@@ -100,7 +100,6 @@ const editBook = (req, res = response) => {
 
   db.query('SELECT id, author_name FROM authors WHERE author_name = ?', author, (err, result) => {
     if (err) {
-      console.log(err)
       return res.status(404).json({
         error: true,
         msg: err.sqlMessage
